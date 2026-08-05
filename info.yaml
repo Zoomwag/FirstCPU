@@ -1,0 +1,48 @@
+# Tiny Tapeout project information
+project:
+  title: "JB16 16-bit educational CPU"
+  author: "Jonathan B"
+  discord: ""
+  description: "A small 16-bit accumulator CPU with ALU, ROM, RAM, flags, jumps and 16-bit output"
+  language: "Verilog"
+  clock_hz: 1000000
+  tiles: "2x2"
+  top_module: "tt_um_jonathanb_jb16"
+  source_files:
+    - "jb16_alu.v"
+    - "jb16_rom.v"
+    - "jb16_cpu.v"
+    - "tt_um_jonathanb_jb16.v"
+
+pinout:
+  # Inputs read by the IN instruction
+  ui[0]: "Input bit 0"
+  ui[1]: "Input bit 1"
+  ui[2]: "Input bit 2"
+  ui[3]: "Input bit 3"
+  ui[4]: "Input bit 4"
+  ui[5]: "Input bit 5"
+  ui[6]: "Input bit 6"
+  ui[7]: "Input bit 7"
+
+  # Low byte of the CPU output register
+  uo[0]: "Output bit 0"
+  uo[1]: "Output bit 1"
+  uo[2]: "Output bit 2"
+  uo[3]: "Output bit 3"
+  uo[4]: "Output bit 4"
+  uo[5]: "Output bit 5"
+  uo[6]: "Output bit 6"
+  uo[7]: "Output bit 7"
+
+  # High byte of the CPU output register
+  uio[0]: "Output bit 8"
+  uio[1]: "Output bit 9"
+  uio[2]: "Output bit 10"
+  uio[3]: "Output bit 11"
+  uio[4]: "Output bit 12"
+  uio[5]: "Output bit 13"
+  uio[6]: "Output bit 14"
+  uio[7]: "Output bit 15"
+
+yaml_version: 6
