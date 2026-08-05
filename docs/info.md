@@ -1,20 +1,46 @@
-<!---
+# JB16
 
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
+JB16 is a small educational **16-bit accumulator CPU** written in synthesizable Verilog for Tiny Tapeout SKY130.
 
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
+## CPU features
 
-## How it works
+- 16-bit accumulator and ALU
+- Addition, subtraction, AND, OR, XOR and NOT
+- Left/right shifts, increment and decrement
+- Zero, carry and negative flags
+- 64-word program address space
+- Eight 16-bit data-RAM words
+- Conditional and unconditional jumps
+- 8-bit external input, zero-extended to 16 bits
+- Full 16-bit external output
+- Halt and enable control
 
-Explain how your project works
+The complete output word is:
 
-## How to test
+```text
+{uio_out, uo_out}
+```
 
-Explain how to use your project
+`uo_out` is the lower byte and `uio_out` is the upper byte.
 
-## External hardware
+## Built-in demonstration program
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+After reset the program outputs:
+
+```text
+0003
+0002
+0001
+AA55
+```
+
+It then repeatedly reads `ui_in`, adds one, and writes the 16-bit answer to the output.
+
+For example:
+
+```text
+ui_in = 2A  -> output = 002B
+ui_in = FF  -> output = 0100
+```
+
+See `PROGRAM.md` for the instruction encoding and `START_HERE.md` for build instructions.
